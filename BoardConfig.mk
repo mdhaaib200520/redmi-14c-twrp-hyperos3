@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 # Device Path
-DEVICE_PATH := device/xiaomi/lake   # CHANGED from pond to lake
+DEVICE_PATH := device/xiaomi/lake
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
@@ -50,8 +50,8 @@ BOARD_RAMDISK_OFFSET      := 0x07c08000
 BOARD_TAGS_OFFSET         := 0x0bc08000
 BOARD_DTB_OFFSET          := 0x0bc08000
 
-TARGET_PREBUILT_DTB := device/xiaomi/lake /prebuilt/dtb.img
-TARGET_PREBUILT_KERNEL := device/xiaomi/lake /prebuilt/kernel
+TARGET_PREBUILT_DTB := device/xiaomi/lake/prebuilt/dtb.img
+TARGET_PREBUILT_KERNEL := device/xiaomi/lake/prebuilt/kernel
 
 BOARD_MKBOOTIMG_ARGS += \
 	--dtb $(TARGET_PREBUILT_DTB) \
@@ -102,7 +102,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 # System as root
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
 
-# Init
+# Init (Disabled - no source)
 # TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_lake
 # TARGET_RECOVERY_DEVICE_MODULES := libinit_lake
 
@@ -131,6 +131,9 @@ PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
 PLATFORM_SECURITY_PATCH := 2099-12-31
 BOOT_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
+
+# 64-bit support
+TARGET_SUPPORTS_64_BIT_APPS := true
 
 # TWRP Configuration
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
@@ -178,8 +181,7 @@ TW_INCLUDE_LPTOOLS := true
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_LIBRESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
-# Add this in the Architecture section
-TARGET_SUPPORTS_64_BIT_APPS := true
+
 # Debug
 TARGET_USES_LOGD := true
 TWRP_INCLUDE_LOGCAT := true
