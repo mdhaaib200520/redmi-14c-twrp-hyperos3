@@ -50,8 +50,8 @@ BOARD_RAMDISK_OFFSET      := 0x07c08000
 BOARD_TAGS_OFFSET         := 0x0bc08000
 BOARD_DTB_OFFSET          := 0x0bc08000
 
-TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
+TARGET_PREBUILT_DTB := device/xiaomi/lake /prebuilt/dtb.img
+TARGET_PREBUILT_KERNEL := device/xiaomi/lake /prebuilt/kernel
 
 BOARD_MKBOOTIMG_ARGS += \
 	--dtb $(TARGET_PREBUILT_DTB) \
