@@ -18,10 +18,10 @@
 #
 
 # Inherit from hardware-specific part of the product configuration
-$(call inherit-product, device/xiaomi/pond/device.mk)
+$(call inherit-product, device/xiaomi/lake/device.mk)
 
 # Inherit any OrangeFox-specific settings
-#$(call inherit-product-if-exists, device/xiaomi/pond/fox_pond.mk)
+#$(call inherit-product-if-exists, device/xiaomi/lake/fox_lake.mk)
 
 # Inherit some common TWRP stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)
