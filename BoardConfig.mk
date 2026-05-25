@@ -178,7 +178,8 @@ TW_INCLUDE_LPTOOLS := true
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_LIBRESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
-
+# Add this in the Architecture section
+TARGET_SUPPORTS_64_BIT_APPS := true
 # Debug
 TARGET_USES_LOGD := true
 TWRP_INCLUDE_LOGCAT := true
