@@ -109,6 +109,14 @@ TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 
+# ============================================================
+# CRITICAL ADDITIONS FOR VIRTUAL A/B - FIXES BOOTLOOP
+# ============================================================
+BOARD_USES_RECOVERY_AS_BOOT := true
+BOARD_SUPPORTS_AB := true
+BOARD_SUPPORTS_AB_SNAPSHOT := true
+# ============================================================
+
 # VNDK Support
 BOARD_VNDK_VERSION := current
 
@@ -125,9 +133,9 @@ TW_USE_ORIGINAL_FSTAB := $(TARGET_RECOVERY_FSTAB)
 TW_CUSTOM_CPU_TEMP_PATH := /sys/class/thermal/thermal_zone28/temp
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
 
-# Init Library
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_lake
-TARGET_RECOVERY_DEVICE_MODULES := libinit_lake
+# Init Library (Remove if causing issues)
+# TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_lake
+# TARGET_RECOVERY_DEVICE_MODULES := libinit_lake
 
 # F2FS specific fixes
 TW_INCLUDE_F2FS := true
