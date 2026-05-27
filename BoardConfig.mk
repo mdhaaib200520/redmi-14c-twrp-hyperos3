@@ -142,6 +142,7 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone28/temp"
 TW_EXCLUDE_APEX := true
 TW_EXCLUDE_TWRPAPP := true
+TW_NO_LEGACY_PROPS := true
 TW_BACKUP_EXCLUSIONS := /data/fonts/files
 TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
 TW_HAS_MTP := true
